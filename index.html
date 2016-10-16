@@ -6,34 +6,49 @@
 	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 	<script type="text/javascript" src="script.js"></script>
 	<meta charset="utf-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<h1>Simple Todo List</h1>
 	<!---<p>No GUI yet. For now, press F12 and use the JavaScript console to interact.</p>-->
-	<div class = "enterForm">
-	<form id = "form1">
-		<input type="text" name="addI" placeholder="Item" />
-		<input type="text" name="addC" placeholder="Category" />
-		<input type="button" value="Add Item" onclick="todoList.addItem(this.form.addI.value,this.form.addC.value)" />
+	<div class = "container-fluid">
+	<form class = "form-inline">
+		<div class="form-group">
+			<input type="text" class="form-control" name="addI" placeholder="Item" />
+			<input type="text" class="form-control" name="addC" placeholder="Category" />
+			<input type="button" class="btn btn-default" value="Add Item" onclick="todoList.addItem(this.form.addI.value,this.form.addC.value)" />
+		</div>
+			<br><br>
+		<div class="form-group">
+			<input type="text" class="form-control" name="old" placeholder="Old Item" />
+			<input type="text" class="form-control" name="new" placeholder="New Item" />
+			<input type="button" class="btn btn-default" value="Change Item" onclick="todoList.changeItem(this.form.old.value,this.form.new.value)" />
+		</div>
 		<br><br>
 
-		<input type="text" name="old" placeholder="Old Item" />
-		<input type="text" name="new" placeholder="New Item" />
-		<input type="button" value="Change Item" onclick="todoList.changeItem(this.form.old.value,this.form.new.value)" />
+		<div class="form-group">
+			<input type="text" class="form-control" name="del" placeholder="Item" />
+			<input type="button" class="btn btn-default" value="Delete Item" onclick="todoList.deleteItem(this.form.del.value)" />
+		</div>
 		<br><br>
 
-		<input type="text" name="del" placeholder="Item" />
-		<input type="button" value="Delete Item" onclick="todoList.deleteItem(this.form.del.value)" />
+		<div class="form-group">
+			<input type="text" class="form-control" name="setCat" placeholder="Item" />
+			<input type="text" class="form-control" name="Cat" placeholder="Category" />
+			<input type="button" class="btn btn-default" value="Set Category" onclick="todoList.setCategory(this.form.setCat.value,this.form.Cat.value)" />
+		</div>
 		<br><br>
 
-		<input type="text" name="setCat" placeholder="Item" />
-		<input type="text" name="Cat" placeholder="Category" />
-		<input type="button" value="Set Category" onclick="todoList.setCategory(this.form.setCat.value,this.form.Cat.value)" />
-		<br><br>
-
-		<input type="button" value="Show List" onclick="todoList.showList()" />
-		<input type="button" value="Show List By Category" onclick="todoList.showListByCategory()" />
-		<input type="button" value="Clear" onclick="todoList.clear()" />
+		<input type="button" class="btn btn-default" value="Show List" onclick="todoList.showList()" />
+		<input type="button" class="btn btn-default" value="Show List By Category" onclick="todoList.showListByCategory()" />
+		<input type="button" class="btn btn-default" value="Clear" onclick="todoList.clear()" />
 		<br><br><br>
 	</form>
 	</div>
